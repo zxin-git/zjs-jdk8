@@ -13,7 +13,7 @@
   </parent>
   
   	<dependencies>
-	  	<dependency>
+<!-- 	  	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-starter-web</artifactId>
 	  	</dependency>
@@ -21,7 +21,7 @@
 	  	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-starter-actuator</artifactId>
-	  	</dependency>
+	  	</dependency> -->
 	  	
 	  	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
@@ -30,9 +30,35 @@
 	  	</dependency>
 	  	
 	  	<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-math3</artifactId>
+		    <version>3.6.1</version>
+		</dependency>
+	  	
+	  	
+	  	<!-- <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>1.3.2</version>
+		</dependency> -->
+		<!-- <dependency>
+		    <groupId>io.netty</groupId>
+		    <artifactId>netty-all</artifactId>
+		</dependency> -->
+	  	
+	  <!--	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-devtools</artifactId>
-	  	</dependency>
+	  	</dependency> -->
   	
   	</dependencies>
+  	
+  	<build>
+  		<plugins>
+  			<!-- <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+  			</plugin> -->
+  		</plugins>
+  	</build>
 </project>
