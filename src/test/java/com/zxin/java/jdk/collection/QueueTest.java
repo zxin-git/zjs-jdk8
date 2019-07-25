@@ -31,4 +31,10 @@ public class QueueTest {
 		queue.element(); //java.util.NoSuchElementException
 //		System.out.println(queue.peek());	//null
 	}
+	
+	@Test
+	public void streamTest(){
+		ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<>(1);
+		queue.stream().forEach(System.out::println);
+	}
 }

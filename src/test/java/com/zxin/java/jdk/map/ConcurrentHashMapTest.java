@@ -52,6 +52,12 @@ public class ConcurrentHashMapTest {
 	}
 	
 	
+	@Test
+	public void test() {
+		Map<Integer, String> map = new ConcurrentHashMap<>();
+		map.put(1, "2");
+	}
+	
 	
 	
 }

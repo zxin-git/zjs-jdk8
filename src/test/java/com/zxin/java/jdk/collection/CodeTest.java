@@ -66,6 +66,9 @@ public class CodeTest {
 	
 	@Test
 	public void minus(){
+		int a = (-1 << 10);
+		System.out.println(complement(a));
+		System.out.println(minus(-1));
 		System.out.println(raw(10));
 		System.out.println(raw(-10));
 		System.out.println(minus(-10));
