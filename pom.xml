@@ -12,6 +12,10 @@
   	<version>2.1.4.RELEASE</version>
   </parent>
   
+	<properties>
+		<curator-version></curator-version>
+	</properties>
+  
   	<dependencies>
 <!-- 	  	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
@@ -29,12 +33,39 @@
 	  		<scope>test</scope>
 	  	</dependency>
 	  	
-	  	<dependency>
+<!-- 	  	<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-math3</artifactId>
 		    <version>3.6.1</version>
 		</dependency>
 	  	
+	  	<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>28.0-jre</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.curator</groupId>
+		    <artifactId>curator-framework</artifactId>
+		    <version>4.2.0</version>
+		</dependency> -->
+		
+	    <dependency>
+	        <groupId>org.projectlombok</groupId>
+	        <artifactId>lombok</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
+	    <dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.47</version>
+		</dependency>
+	    
+<!-- 	    <dependency>
+		    <groupId>com.netflix.ribbon</groupId>
+		    <artifactId>ribbon</artifactId>
+		    <version>2.2.2</version>
+		</dependency> -->
 	  	
 	  	<!-- <dependency>
 		    <groupId>org.apache.commons</groupId>
