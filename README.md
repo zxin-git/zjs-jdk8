@@ -1,0 +1,1 @@
+#### This is the demo for jdk8 and design pattern
