@@ -1,13 +1,10 @@
 package com.zxin.java.jdk.jdk8.func;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.function.*;
 
 public class FunctionTest {
 
@@ -50,5 +47,24 @@ public class FunctionTest {
 	public void function(){
 		Function<String, Integer> function = Integer::valueOf;
 		System.out.println(function.apply("330"));
+	}
+
+	/**
+	 * 功能
+	 */
+	@Test
+	public void unaryOperator(){
+//		Runnable runnable = () -> System.out.println("a");
+//		UnaryOperator unaryOperator = (UnaryOperator<Integer>) x -> x + 1;
+		UnaryOperator unaryOperator =  x -> x;
+		System.out.println(unaryOperator.apply(1));
+	}
+
+	/**
+	 * 双入参函数
+	 */
+	@Test
+	public void biFunction(){
+		BiFunction<Integer, Integer, String> biFunction = (a, b) -> a + b +"";
 	}
 }
