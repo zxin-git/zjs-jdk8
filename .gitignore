@@ -1,0 +1,20 @@
+# Project Files #
+**/target/
+*.class
+**/out/
+**/log/
+**/pom.xml.versionsBackup
+
+# idea Files #
+.mtj.tmp/
+.idea/
+/nbproject
+*.ipr
+*.iws
+*.iml
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.log
