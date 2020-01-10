@@ -57,6 +57,16 @@ public class StreamTest {
 
 	@Test
 	public void action() {
+		Stream<String> stream = Stream.of("1","2","3");
+
+		stream.map(String::toUpperCase);
+		stream.filter(String::isEmpty);
+		stream.limit(100L);
+		stream.skip(100L);
+		stream.sorted();
+		stream.distinct();
+		stream.peek("1"::equals);
+
 
 	}
 
