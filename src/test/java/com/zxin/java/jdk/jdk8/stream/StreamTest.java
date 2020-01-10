@@ -1,5 +1,7 @@
 package com.zxin.java.jdk.jdk8.stream;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -106,4 +108,35 @@ public class StreamTest {
 		String parallelModify = intStream.parallel().reduce("", (s, i) -> s + i, (s1, s2) -> s1 + s2);
 		System.out.println(Arrays.asList(parallel, sequence, parallelModify));
 	}
+
+
+	@Test
+	public void flatMap() {
+		List<Student> students2 = Arrays.asList(new Student("n1", 1), new Student("n2", 2));
+		List<Student> students1 = Arrays.asList(new Student("s1", 1), new Student("s2", 2));
+		List<Grade> grades = Arrays.asList(new Grade("g1", students1), new Grade("g2", students2));
+
+		List<Student> flatMapList = grades.stream().flatMap(grade -> grade.getStudents().stream()).collect(Collectors.toList());
+		List<List<Student>> mapList = grades.stream().map(grade -> grade.getStudents()).collect(Collectors.toList());
+		List mapStreamList = grades.stream().map(grade -> grade.getStudents().stream()).collect(Collectors.toList());
+
+		System.out.println(Arrays.asList(flatMapList, mapList, mapStreamList));
+
+	}
 }
+
+@Data
+@AllArgsConstructor
+class Student {
+	private String name;
+	private int age;
+}
+
+@Data
+@AllArgsConstructor
+class Grade{
+	private String name;
+	private List<Student> students;
+}
+
+
