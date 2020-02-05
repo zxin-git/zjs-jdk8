@@ -17,6 +17,7 @@ public class LocalDateTest {
 		System.out.println(localDate.getMonthValue());
 		System.out.println(localDate.getDayOfMonth());
 		System.out.println(localDate.toString());
+		localDate.minusDays(1);
 	}
 
 }
