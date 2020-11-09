@@ -1,9 +1,11 @@
 package com.zxin.java.question;
 
 /**
+ *
+ * Integer缓存池测试
  * @author zxin
  */
-public class IntegerTest {
+public class IntegerCacheTest {
     public static void main(String[] args) {
         Integer b1 = Integer.valueOf(1);
         Integer c1 = Integer.valueOf("1");

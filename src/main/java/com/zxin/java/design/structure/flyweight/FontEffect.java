@@ -1,4 +1,4 @@
-package com.zxin.java.design.flyweight;
+package com.zxin.java.design.structure.flyweight;
 
 /**
  * 字形

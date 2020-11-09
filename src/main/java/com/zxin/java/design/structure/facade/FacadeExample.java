@@ -1,4 +1,4 @@
-package com.zxin.java.design.facade;
+package com.zxin.java.design.structure.facade;
 
 /**
  * 门面模式，对外提供封装的门面的接口
