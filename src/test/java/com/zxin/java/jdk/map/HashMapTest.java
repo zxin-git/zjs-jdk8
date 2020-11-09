@@ -47,7 +47,16 @@ public class HashMapTest {
 		list.parallelStream().forEach((key) -> hashMap.put(key, key));
 		hashMap.entrySet().forEach(System.out::println);
 	}
-	
+
+
+	@Test
+	public void resizeTest(){
+		List<Integer> list = new ArrayList<>(Arrays.asList(0, 64, 128, 256, 512, 1024, 192, 320, 448));
+		HashMap<Integer, Integer> hashMap = new HashMap<>(64);
+		list.stream().forEach((key) -> hashMap.put(key, key));
+		hashMap.put(576, 576);
+		hashMap.entrySet().forEach(System.out::println);
+	}
 	
 	
 	@Test

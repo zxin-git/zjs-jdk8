@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * {@link Arrays.ArrayList}
+ *
  * @author zxin
  *
  */
@@ -38,7 +38,13 @@ public class ListTest {
 		
 		list.forEach(System.out::println);
 	}
-	
+
+	@Test
+	public void removeObjectTest(){
+		List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c", "d"));
+		list.remove("b");
+		list.forEach(System.out::println);
+	}
 	
 	/**
 	 * 添加至index后， 原先的右移
