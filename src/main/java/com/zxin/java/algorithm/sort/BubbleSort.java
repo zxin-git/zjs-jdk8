@@ -3,10 +3,12 @@ package com.zxin.java.algorithm.sort;
 import java.util.List;
 
 /**
+ * 冒泡排序
  * @author zxin
  */
 public class BubbleSort {
 
+    @Deprecated
     public static int[] sort(int[] array){
         int n = array.length;
         for(int i = 1; i <= n - 1; i++){            //排第几个元素 头为1  1 -> n-1
@@ -20,6 +22,31 @@ public class BubbleSort {
             }
         }
         return array;
+    }
+
+
+
+
+    public static void swap(int[] a, int i, int j){
+        int t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+
+
+    public void merge(int[] a1, int[] a2){
+        int l1 = a1.length;
+        int l2 = a2.length;
+        int[] a = new int[l1 + l2];
+        for (int i = 0, j1=0, j2=0; i < a.length; i++) {
+            if(j1 >= l1) a[i] = a2[j2++];
+            if(j2 >= l2) a[i] = a1[j1++];
+            if(a1[j1] <= a2[j2]){
+                a[i] = a1[j1++];
+            }else{
+                a[i] = a2[j2++];
+            }
+        }
     }
 
 }
