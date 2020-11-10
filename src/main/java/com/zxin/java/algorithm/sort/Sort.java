@@ -103,12 +103,44 @@ public class Sort {
         }
     }
 
+    /**
+     * 归并排序
+     * 递归，二分左右，归并
+     */
+    public static void mergeSort(int[] a, int low, int high){
+        if(low < high){
+            int mid = (low + high)/2;
+            mergeSort(a, low, mid);
+            mergeSort(a,mid+1, high);
+            merge(a, low, mid, high);
+        }
+    }
+
+    /**
+     * 左右表归并
+     */
+    static void merge(int[] a, int low, int mid, int high){
+        int[] b = new int[a.length];
+        for (int k = low; k <= high; k++) {     //拷贝数组
+            b[k] = a[k];
+        }
+
+        int i = low;
+        int j = mid+1;  //左表和右表的索引初始点
+        int k = i;
+        while (i <= mid && j <= high)  a[k++] = b[i] < b[j] ? b[i++] : b[j++]; //左右最小的依次填充
+        while (i <= mid) a[k++] = b[i++];   //左表未检测完，剩下全复制
+        while (j <= high) a[k++] = b[j++];  //右表未检测完，剩下全复制，与左表只会有一个没检测完
+    }
+
+
     public static void main(String[] args) {
         int[] a = {3, 9, 7, 6, 5, 0, 2, 1, 8, 4};
 //        quickSort(a, 0, a.length - 1);
 //        insertSort(a, a.length);
 //        bubbleSort(a, a.length);
-        selectSort(a, a.length);
+//        selectSort(a, a.length);
+        mergeSort(a, 0, a.length - 1);
         System.out.println(Arrays.toString(a));
     }
 
