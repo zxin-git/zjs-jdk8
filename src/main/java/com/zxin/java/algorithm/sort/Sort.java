@@ -12,14 +12,14 @@ public class Sort {
     /**
      * less than 小于
      */
-    public static boolean less(int a, int b){
+    static boolean less(int a, int b){
         return a < b;
     }
 
     /**
      * 交换
      */
-    public static void swap(int[] a, int i, int j){
+    static void swap(int[] a, int i, int j){
         int t = a[i];
         a[i] = a[j];
         a[j] = t;
@@ -134,13 +134,56 @@ public class Sort {
     }
 
 
+    /**
+     * 堆排序
+     * 左子节点：2*k + 1
+     * 右子节点：2*k + 2
+     * 父节点：(i-1)/2 整除
+     * 例如 n = 7,  父：1，左子：3，右子：4
+     */
+    public static void heapSort(int[] a, int n){
+        buildMaxHeap(a, n);     //构建初始堆
+        for (int i = n-1; i > 0; i--) {     //依次选择根，放置最后
+            swap(a, i, 0);
+            adjustDown(a, 0, i);
+        }
+    }
+
+    static void buildMaxHeap(int[] a, int n){
+        for (int i = n/2 - 1; i >= 0 ; i--) { //n/2 - 1是n-1父节点，倒数第二层最后一个父节点
+            adjustDown(a, i , n);
+        }
+    }
+
+    /**
+     * 向下调整堆
+     * @param a
+     * @param k 父节点
+     * @param n 数组长度
+     */
+    static void adjustDown(int[] a, int k, int n){
+        int tmp = a[k];
+        for (int i = 2*k+1; i < n; i = 2*i+1) {     // i为左子节点下标
+            if(i < n-1 && a[i] < a[i+1]) i++;   //对比左右子节点，i为最大子节点下标
+            if(a[i] > tmp){     // 子大则交换
+                a[k] = a[i];
+                k = i;
+            }else{
+                break;
+            }
+        }
+        a[k] = tmp;
+    }
+
+
     public static void main(String[] args) {
-        int[] a = {3, 9, 7, 6, 5, 0, 2, 1, 8, 4};
+        int[] a = {3, 9, 7, 6, 5, 0, 2, 1, 8,4};
 //        quickSort(a, 0, a.length - 1);
 //        insertSort(a, a.length);
 //        bubbleSort(a, a.length);
 //        selectSort(a, a.length);
-        mergeSort(a, 0, a.length - 1);
+//        mergeSort(a, 0, a.length - 1);
+        heapSort(a, a.length);
         System.out.println(Arrays.toString(a));
     }
 
