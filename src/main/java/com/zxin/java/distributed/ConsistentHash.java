@@ -1,4 +1,4 @@
-package com.zxin.java.jdk.distributed;
+package com.zxin.java.distributed;
 
 import java.util.Collection;
 import java.util.SortedMap;
@@ -78,7 +78,7 @@ public class ConsistentHash{
 	 * @author zxin
 	 *
 	 */
-	private static interface HashFunction{
+	static interface HashFunction{
 		default <T> Integer hash(T t, int... seed){
 			//虚节点算法  + 限制hash范围
 //			t.hashCode() & Integer.MAX_VALUE;
@@ -93,7 +93,7 @@ public class ConsistentHash{
 	 *
 	 */
 	@Data
-	private static class Node {
+	static class Node {
 		
 		private String ip;
 		
