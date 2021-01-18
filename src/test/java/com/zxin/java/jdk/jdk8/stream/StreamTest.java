@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 
@@ -66,6 +67,7 @@ public class StreamTest {
 		stream.sorted();
 		stream.distinct();
 		stream.peek("1"::equals);
+		IntStream intStream = stream.mapToInt(Integer::valueOf);
 
 
 	}
