@@ -24,5 +24,10 @@ public class DecimalFormatTest {
 
         System.out.println(Arrays.asList(percent, milleStr, twoScale, integerStr));
 
+        // 不足自动填充0
+        decimalFormat.applyPattern("0000000000");
+        String fill = decimalFormat.format(12345);
+        System.out.println(fill);
+
     }
 }
