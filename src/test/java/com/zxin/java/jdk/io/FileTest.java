@@ -17,4 +17,26 @@ public class FileTest {
         System.out.println(file);
     }
 
+    public static void main(String[] args) {
+        fileTest();
+
+    }
+
+    public static void fileTest(){
+        try {
+            File file = new File("E:/zxin/developer/tmp/file");
+            System.out.println(file.getName());	//名称
+            System.out.println(file.getParent());	//父全路径
+            System.out.println(file.getPath());
+            System.out.println(file.getParentFile());
+            System.out.println(file.listFiles());	//数组
+            System.out.println(file.getFreeSpace());
+            System.out.println(file.getCanonicalPath());//抽象路径
+            System.out.println(file.getAbsolutePath());//抽象路径
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

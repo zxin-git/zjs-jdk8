@@ -11,10 +11,10 @@ import org.slf4j.LoggerFactory;
  * 方法引用
  * 	<p> 四种方法的引用方式</p>
  * 	<ul>
- *		<li>构造器</li>
- *		<li>静态方法</li>
- *		<li>普通实例方法</li>
- *		<li>特定对象方法</li>
+ *		<li>构造器：Class::new</li>
+ *		<li>静态方法：Class::static_method</li>
+ *		<li>普通实例方法：Class::method</li>
+ *		<li>特定对象方法：instance::method</li>
  *	</ul>
  * @author zxin
  *
@@ -33,6 +33,10 @@ public class FunctionRefTest {
 		Function<String, String> instanceFunction = String::toUpperCase;
 		
 		Supplier<String> objectSupplier = "sss"::toUpperCase;
+
 	}
+
+
+
 	
 }
