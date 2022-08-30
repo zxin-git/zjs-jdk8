@@ -12,10 +12,6 @@
   	<version>2.1.4.RELEASE</version>
   </parent>
   
-	<properties>
-		<curator-version></curator-version>
-	</properties>
-  
   	<dependencies>
 	    <dependency>
 	        <groupId>org.projectlombok</groupId>
@@ -35,7 +31,6 @@
 			<scope>compile</scope>
 			<optional>true</optional>
 		</dependency>
-
   	</dependencies>
 
 </project>

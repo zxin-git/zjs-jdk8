@@ -1,1 +1,10 @@
-#### This is the demo for jdk8 and design pattern
+#### JDK8与CS基础
+不依赖第三方组件
+
+JDK
+- ...
+
+
+CS
+- design pattern
+- algorithm
