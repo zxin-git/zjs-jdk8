@@ -178,12 +178,12 @@ public class Sort {
 
     public static void main(String[] args) {
         int[] a = {3, 9, 7, 6, 5, 0, 2, 1, 8,4};
-//        quickSort(a, 0, a.length - 1);
+        quickSort(a, 0, a.length - 1);
 //        insertSort(a, a.length);
 //        bubbleSort(a, a.length);
 //        selectSort(a, a.length);
 //        mergeSort(a, 0, a.length - 1);
-        heapSort(a, a.length);
+//        heapSort(a, a.length);
         System.out.println(Arrays.toString(a));
     }
 
